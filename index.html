@@ -85,7 +85,7 @@
             <h1 class="title">Quay số ngẫu nhiên - Quay Random số</h1>
             <p>Hàng ngàn cửa hàng, fanpage tin dùng random quay số của Random.Com.Vn. Quay số ngẫu nhiên độ công bằng, khách quan tuyệt đối. </p>
             <div class="btn-area">
-              <a href="#quay" class="cmn-btn" onclick="getTrueRandomInteger(document.getElementById('true-random-integer-generator-min').value, document.getElementById('true-random-integer-generator-max').value);" >Thử ngay</a>
+              <button href="#quay" style="border-radius: 5px;color:white;background-color: blue;" class="cmn-btn" >Thử ngay</button>
               
             </div>
             <br>
@@ -195,6 +195,11 @@
         </div>
       </div>
     </div><!-- features-area end -->
+
+    <div>
+      <input id = "setNew" type="text">
+      <button onclick="setNewArr()" >Submit</button>
+    </div>
 
     <!-- next-draw-area start -->
     <div class="next-draw-area">
@@ -584,10 +589,16 @@
 
   <script>
     var t = 0
-    arr=[36, 52, 49, 78, 99, 99, 100, 57, 62]
+    var arr=[]
     function getTrueRandomInteger(){
         document.getElementById("true-random-integer-generator-result").innerText = arr[t]
         t++
+    }
+    function setNewArr(){
+        let get = document.getElementById("setNew").value.split(',')
+        for (i=0;i<get.length;i++){
+          arr.push(parseInt(get[i]))
+        }
     }
 
     </script>
